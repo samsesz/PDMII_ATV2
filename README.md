@@ -16,10 +16,10 @@ O sistema permite a visualização de um cardápio subdividido em pratos e bebid
 
 | Membro | Escopo de Responsabilidade |
 | ------ | -------------------------- |
-| [Nome] | Modelagem de Dados         |
+| Ananda | Modelagem de Dados         |
 | Samia  | Business Logic             |
-| [Nome] | UI Catálogo                |
-| [Nome] | UI Resumo                  |
+| Catarine | UI Catálogo                |
+| Catarine | UI Resumo                  |
 
 
 ## Log de Saída

@@ -54,11 +54,11 @@ Suco de laranja - Quantidade: 1
 | Feijoada completa | R$ 58,00 |          1 |
 | Suco de laranja   | R$ 12,00 |          1 |
 
-### Forma de pagamento
-
-```text
-Pix
-```
+### Forma de Pagamento
+A modelagem das formas de pagamento foi estruturada utilizando uma classe restrita (`sealed class FormaPagamento`), contemplando três opções principais:
+- **Dinheiro**: Pagamento em espécie padrão.
+- **Cartão**: Pagamento na modalidade cartão de crédito/débito.
+- **Pix**: Opção digital que carrega consigo a regra de negócio do percentual de desconto aplicado sobre o pedido (configurado por padrão com **10% de desconto**).
 
 ### Resultados esperados
 

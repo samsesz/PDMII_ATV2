@@ -1,6 +1,7 @@
-package com.example.pdmii_atv2.ui.theme
+package com.example.pdmii_atv2.ui.theme.theme
 
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Typography
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
@@ -10,6 +11,7 @@ private val LightColorScheme = lightColorScheme(
     secondary = VerdeOliva,
     onSecondary = TextoEscuro,
     tertiary = RosaGoiaba,
+    onTertiary = TextoEscuro,
     background = FundoClaro,
     onBackground = TextoEscuro,
     surface = SuperficieCard,
@@ -22,7 +24,7 @@ fun Pdmii_atv2Theme(
 ) {
     MaterialTheme(
         colorScheme = LightColorScheme,
-        typography = Typography,
+        typography = Typography(),
         content = content
     )
 }

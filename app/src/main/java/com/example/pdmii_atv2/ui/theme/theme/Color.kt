@@ -1,4 +1,4 @@
-package com.example.pdmii_atv2.ui.theme
+package com.example.pdmii_atv2.ui.theme.theme
 
 import androidx.compose.ui.graphics.Color
 

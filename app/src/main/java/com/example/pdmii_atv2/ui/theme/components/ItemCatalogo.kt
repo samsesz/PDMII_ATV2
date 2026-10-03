@@ -1,59 +1,70 @@
-package com.example.pdmii_atv2.ui.components
+package com.example.pdmii_atv2.ui.theme.components
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ItemResumoRow(
+fun ItemCatalogoCard(
     nome: String,
-    quantidade: Int,
-    valorFormatado: String,
+    preco: Double,
+    descricao: String? = null,
+    onAdicionarClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Row(
+    Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
+            .padding(vertical = 6.dp)
     ) {
-        Text(
-            text = "$nome (x$quantidade)",
-            style = MaterialTheme.typography.bodyMedium
-        )
-        Text(
-            text = valorFormatado,
-            style = MaterialTheme.typography.bodyMedium,
-            fontWeight = FontWeight.Medium
-        )
-    }
-}
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = nome,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
 
-@Composable
-fun LinhaValoresResumo(
-    rotulo: String,
-    valor: String,
-    destaque: Boolean = false
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 2.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            text = rotulo,
-            style = if (destaque) MaterialTheme.typography.titleMedium else MaterialTheme.typography.bodyMedium,
-            fontWeight = if (destaque) FontWeight.Bold else FontWeight.Normal
-        )
-        Text(
-            text = valor,
-            style = if (destaque) MaterialTheme.typography.titleMedium else MaterialTheme.typography.bodyMedium,
-            fontWeight = if (destaque) FontWeight.Bold else FontWeight.Normal,
-            color = if (destaque) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSurface
-        )
+            if (!descricao.isNullOrBlank()) {
+                Spacer(modifier = Modifier.height(6.dp))
+
+                Text(
+                    text = descricao,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = String.format("R$ %.2f", preco),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Button(
+                    onClick = onAdicionarClick
+                ) {
+                    Text("ADICIONAR")
+                }
+            }
+        }
     }
 }

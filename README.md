@@ -16,10 +16,10 @@ O sistema permite a visualização de um cardápio subdividido em pratos e bebid
 
 | Membro | Escopo de Responsabilidade |
 | ------ | -------------------------- |
-| [Nome] | Modelagem de Dados         |
+| Ananda | Modelagem de Dados         |
 | Samia  | Business Logic             |
-| [Nome] | UI Catálogo                |
-| [Nome] | UI Resumo                  |
+| Catarine | UI Catálogo                |
+| Catarine | UI Resumo                  |
 
 
 ## Log de Saída
@@ -54,11 +54,11 @@ Suco de laranja - Quantidade: 1
 | Feijoada completa | R$ 58,00 |          1 |
 | Suco de laranja   | R$ 12,00 |          1 |
 
-### Forma de pagamento
-
-```text
-Pix
-```
+### Forma de Pagamento
+A modelagem das formas de pagamento foi estruturada utilizando uma classe restrita (`sealed class FormaPagamento`), contemplando três opções principais:
+- **Dinheiro**: Pagamento em espécie padrão.
+- **Cartão**: Pagamento na modalidade cartão de crédito/débito.
+- **Pix**: Opção digital que carrega consigo a regra de negócio do percentual de desconto aplicado sobre o pedido (configurado por padrão com **10% de desconto**).
 
 ### Resultados esperados
 

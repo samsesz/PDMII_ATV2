@@ -72,9 +72,10 @@ Valor Total Final: R$ 112,00
 ## Telas do Sistema
 
 ### Tela de Catálogo
-
-<!-- -->
+![Tela de Catálogo](catalogo.png)
 
 ### Tela de Resumo
+![Tela de Resumo](resumo.png)
 
-<!-- -->
+### Logcat do Sistema
+![Logcat](logcat.png)
